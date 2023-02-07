@@ -1,11 +1,11 @@
-// "use strict";
+"use strict";
                         /****************** NAVBAR *******************/
 const navToggler = document.getElementById('toggle');
 const navList = document.getElementById('navList');
 const hamburger = document.querySelector('.burger');
 const closeBtn = document.querySelector('.close');
 const navbar = document.querySelector('.navbar');
-const year = document.querySelector('.year');
+const footerYear = document.querySelector('.footer-year');
 const heroText = document.querySelector('.text_box');
 
                         /***************** BANNER IMAGE RENDERING****************/
@@ -21,15 +21,22 @@ const eventModalContainer = document.querySelector('.event-modal-wrapper');
 const eventModal = document.querySelector('.event-modal');
 const eventModalContent = document.querySelector('.event-modal-content');
 const hideEventModal = document.querySelector('.hide-event-modal');
+
+//Variable that monitors and updates year in the footer to the current year
+let currentYear = new Date().getFullYear(); 
+//console.log(typeof(currentYear))
+
+
 // const textFields = document.querySelector('.message_form');
 // const submitBtn = document.querySelector('.submit');
 
 // let p = eventModalContent.firstElementChild.textContent = 'Hey';
 // console.log(p)
 //console.log()
-
 // submitBtn.addEventListener('click', () => textFields.reset());
 
+
+/***************************BANNER IMAGE CHANGE FUNCTIONALITY***********************/
 let bannerImages = [
     'img/nissan.jpg',
     'img/nissanStaff.jpg',
@@ -44,7 +51,6 @@ let bannerImages = [
 ];
 
 let imageTimeCount = 0;
-
 let changeImage = ()=>{
     banner.style.backgroundImage = `linear-gradient(rgba(0,0,0, 0.7), rgba(42, 40, 40, 0.664)), url(${bannerImages[imageTimeCount]})`;
     imageTimeCount++;
@@ -53,11 +59,74 @@ let changeImage = ()=>{
         imageTimeCount = 0;
     }
 }
-
 setInterval(changeImage, 5000);
 
 
 
+
+// Hamburger icon toggler
+navToggler.addEventListener('click', ()=>{
+    
+    navList.classList.toggle('active');
+    heroText.classList.toggle('fade-banner-text');
+    //console.log(navList.classList)
+   /*
+   navList.classList.contains('active') ? heroText.classList.add('fade-banner-text') :  heroText.classList.remove('fade-banner-text');
+    if(navList.classList.contains('active')){
+        // console.log(true)
+        heroText.classList.toggle('fade-banner-text');
+    }
+    else{
+        //console.log(false)
+        heroText.classList.toggle('fade-banner-text');
+    }
+    */
+    
+    //if(e.currentTarget.classList.contains('burger')){
+        hamburger.classList.toggle('hideBurger');
+        closeBtn.classList.toggle('ShowCloseBtn');
+
+        // navList.addEventListener('click', (e)=>{
+        //     if(e.target.classList.contains('navLinks')){
+        //         console.log(true);
+        //         navList.classList.toggle('active');
+        //         hamburger.classList.toggle('hideBurger');
+        //         closeBtn.classList.toggle('ShowCloseBtn');
+        //     }else{
+        //         console.log(false);
+        //         navList.classList.toggle('active');
+        //         hamburger.classList.toggle('hideBurger');
+        //         closeBtn.classList.toggle('ShowCloseBtn');
+        //     }
+        // });
+
+});
+
+// Changing the background color of the navbar on scroll
+window.onscroll = function(){
+      //if(document.body.scrollTop >= window.innerHeight || document.documentElement.scrollTop >= window.innerHeight){
+        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            //console.log('scrolling...');
+            navbar.classList.add('bg-nav');
+
+            if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500){
+                //console.log('scrolling above image');
+                navbar.classList.add('bg-nav-2');
+            }else {
+                navbar.classList.remove('bg-nav-2');
+            }
+        }
+        else {
+            navbar.classList.remove('bg-nav');
+        }
+}
+
+
+                    /**************updating the footer to the current year**************/
+footerYear.textContent = currentYear;
+
+                    /**************MODAL CONTENTS**************/
+// Service modal content
 const services = [
     `<h2>Vehicle Sales</h2>
     <p>
@@ -93,6 +162,7 @@ const services = [
     </p>`
 ]
 
+//Event modal content
 const flyntAutoEvent = [
     `
         The past three editions of Taadi Street 
@@ -151,71 +221,6 @@ const flyntAutoEvent = [
     `
 ];
 
-
-//Variable that monitors and updates year in the footer to the current year
-let currentYear = new Date().getFullYear(); 
-
-
-// Hamburger icon toggler
-navToggler.addEventListener('click', ()=>{
-    
-    navList.classList.toggle('active');
-    //console.log(navList.classList)
-    //navList.classList.contains('active') ? heroText.classList.toggle('fade-banner-text') :  heroText.classList.remove('fade-banner-text');
-    if(navList.classList.contains('active')){
-        // console.log(true)
-        heroText.classList.toggle('fade-banner-text');
-    }
-    else{
-        //console.log(false)
-        heroText.classList.toggle('fade-banner-text');
-    }
-    
-    //if(e.currentTarget.classList.contains('burger')){
-        hamburger.classList.toggle('hideBurger');
-        closeBtn.classList.toggle('ShowCloseBtn');
-
-        // navList.addEventListener('click', (e)=>{
-        //     if(e.target.classList.contains('navLinks')){
-        //         console.log(true);
-        //         navList.classList.toggle('active');
-        //         hamburger.classList.toggle('hideBurger');
-        //         closeBtn.classList.toggle('ShowCloseBtn');
-        //     }else{
-        //         console.log(false);
-        //         navList.classList.toggle('active');
-        //         hamburger.classList.toggle('hideBurger');
-        //         closeBtn.classList.toggle('ShowCloseBtn');
-        //     }
-        // });
-
-});
-
-
-// Changing the background color of the navbar on scroll
-window.onscroll = function(){
-      //if(document.body.scrollTop >= window.innerHeight || document.documentElement.scrollTop >= window.innerHeight){
-        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
-            //console.log('scrolling...');
-            navbar.classList.add('bg-nav');
-
-            if(document.body.scrollTop > 500 || document.documentElement.scrollTop > 500){
-                //console.log('scrolling above image');
-                navbar.classList.add('bg-nav-2');
-            }else {
-                navbar.classList.remove('bg-nav-2');
-            }
-        }
-        else {
-            navbar.classList.remove('bg-nav');
-        }
-}
-
-
-                    /**************updating the footer to the current year**************/
-year.textContent = currentYear;
-
-
                     /***************** MODAL TOGGLE FUNCTIONALITY ****************/
 // services modal                    
 showMore.forEach(el => {
@@ -237,7 +242,6 @@ showMore.forEach(el => {
         modal.style.display = 'block';
     });
 });
-
 
 // Event modal
 flyntEvent.forEach(fae =>{
@@ -264,7 +268,6 @@ flyntEvent.forEach(fae =>{
         eventModalContainer.style.display = 'block';
     });
 });
-
 
 /*********CLICK AND KEYPRESS EVENTS THAT HIDES THE MODAL*********/
 
@@ -311,45 +314,40 @@ const countDown = () => {
     document.querySelector('.minute').innerText = textMinute;
     document.querySelector('.second').innerText = textSecond;
 
-    let add_s = document.querySelectorAll('.add-s');
-    let eventTime = document.querySelectorAll('.day,.hour,.minute,.second');
+    let unit = document.querySelectorAll('.unit');
+    //let eventTime = document.querySelectorAll('.day,.hour,.minute,.second');
     let countDownContainer = document.querySelector('.countdown');
-    
-    
     
     let timeValue = [];
     let timeUnit = [];
 
-    eventTime.forEach((time) => {
-        timeValue.push(time.textContent);
-    });
+    // eventTime.forEach((time) => {
+    //     timeValue.push(time.textContent);
+    // });
 //console.log(timeValue)
-    add_s.forEach((text, index) => {
+    unit.forEach((text) => {
         timeUnit.push(text.textContent);
-        timeValue.forEach((value) => {
-            //console.log(value)
-            //console.log(value)
-        });
     });
+    
 
-// html code that gets parsed injected into a countdown container on the html page
+// html code that gets parsed or injected into a countdown container on the html page
     let html = `
 
         <div class="container-day">
             <h3 class="day">${textDay}</h3>
-            <h3 class="add-s">${timeUnit[0]}</h3>
+            <h3 class="unit">${timeUnit[0]}</h3>
         </div>
         <div class="container-hour">
             <h3 class="hour">${textHour}</h3>
-            <h3 class="add-s">${timeUnit[1]}</h3>
+            <h3 class="unit">${timeUnit[1]}</h3>
         </div>
         <div class="container-minute">
             <h3 class="minute">${textMinute}</h3>
-            <h3 class="add-s">${timeUnit[2]}</h3>
+            <h3 class="unit">${timeUnit[2]}</h3>
         </div>
         <div class="container-second">
             <h3 class="second">${textSecond}</h3>
-            <h3 class="add-s">${timeUnit[3]}</h3>
+            <h3 class="unit">${timeUnit[3]}</h3>
         </div>
     
     `;
