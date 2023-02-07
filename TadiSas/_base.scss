@@ -1,0 +1,57 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&family=Monda:wght@400;700&display=swap');
+// @import url('http://fonts.cdnfonts.com/css/akrobat');
+
+// @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500&display=swap');
+
+*{
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+
+h1{
+    font-size: 5rem;
+    letter-spacing: 0.7rem;
+    font-weight: 500;
+    
+    
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 400;
+    // font-family: 'Akrobat Bold';
+    //font-weight: 'Light';
+}
+
+h3{
+    font-size: 2.3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+
+a{
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+    //font-weight: 'ExtraLight';
+    //font-family: 'Oswald Light';
+}
+
+p {
+    font-size: 2rem;
+  }
+
+  i{
+    font-size: 3rem;
+  }

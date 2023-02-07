@@ -1,0 +1,27 @@
+{
+  "name": "flyntauto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nerdy",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "cssnano": "^5.1.14",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.50.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp-postcss": "^9.0.1",
+    "gulp-terser": "^2.1.0"
+  }
+}
