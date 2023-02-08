@@ -77,7 +77,9 @@
             &:hover{
                 transform: translateY(-0.1rem);
                 background-color: $redish;
+                //border-bottom: 0.5rem solid $redish;
                 border-radius: 2rem;
+                //padding: 1rem 0;
             }
             
             &:active{
@@ -89,6 +91,7 @@
                 text-decoration: none;
                 padding: 0 2rem;
                 color: $white;
+                font-size: 3rem;
             
             }
         }
@@ -162,8 +165,8 @@
             text-decoration: none;
             color: $white;
             background-color: $redish;
-            padding: .8rem 2rem;
-            border-radius: 2rem;
+            padding: .8rem 3rem;
+            border-radius: 1.3rem;
             margin-top: 2rem;
             transition: .2s all;
 
@@ -179,9 +182,7 @@
         }
 
       }
-      .fade-banner-text{
-        opacity: 0.1;              // this class will be toggle to fade the banner text when                              
-    }                              // the nav list on smaller screens view.
+     
 }
 
 // MODAL
@@ -339,15 +340,6 @@
     }
 }
 
-// @media all and(max-width: 730px) and (min-width: 584px){
-//     html{
-//         font-size: 50%;
-//     }
-//     header nav{
-//         flex-wrap: nowrap;
-//     }
-// }
-
 
 
 @media all and(max-width: 833px){
@@ -381,6 +373,7 @@
         .text_box{
             h1{font-size: 4.8rem;}
             h3{font-size: 2.3rem;}
+            //opacity: 2;
         }
     }
 
@@ -390,4 +383,14 @@
             width: 80%;
         }
     }
+
+    .fade-banner-text{
+        opacity: 0.1;              // this class will be toggle to fade the banner text when                              
+    }                              // the nav list on smaller screens view.
 }
+
+// @media all and(min-width: 833px){
+//     .fade-banner-text{
+//         opacity: 1;              // this class will be toggle to fade the banner text when                              
+//     }     
+// }

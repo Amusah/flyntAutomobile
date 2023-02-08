@@ -72,16 +72,16 @@ navToggler.addEventListener('click', ()=>{
         //         closeBtn.classList.toggle('ShowCloseBtn');
         //     }
         // });
-
+       
+        links.forEach(link => {
+            link.addEventListener('click', ()=>{
+                navList.classList.toggle('active');
+                hamburger.classList.toggle('hideBurger');
+                closeBtn.classList.toggle('ShowCloseBtn');
+                heroText.classList.toggle('fade-banner-text');
+            });
+        });
 });
-links.forEach(link => {
-    link.addEventListener('click', ()=>{
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('hideBurger');
-        closeBtn.classList.toggle('ShowCloseBtn');
-        heroText.classList.toggle('fade-banner-text');
-    });
-})
 
 // Changing the background color of the navbar on scroll
 window.onscroll = function(){
