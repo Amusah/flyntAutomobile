@@ -375,6 +375,9 @@ i {
   width: 100%;
   padding: 3rem;
 }
+#services .card-head span .svgProj {
+  color: white;
+}
 #services .card-body {
   padding: 3rem;
   background-color: #fff;

@@ -22,7 +22,7 @@ const eventModal = document.querySelector('.event-modal');
 const eventModalContent = document.querySelector('.event-modal-content');
 const hideEventModal = document.querySelector('.hide-event-modal');
 
-//Variable that monitors and updates year in the footer to the current year
+//Binding that monitors and updates the footer and event countdown year to the current year
 let currentYear = new Date().getFullYear(); 
 //console.log(typeof(currentYear))
 
@@ -36,34 +36,7 @@ let currentYear = new Date().getFullYear();
 // submitBtn.addEventListener('click', () => textFields.reset());
 
 
-/***************************BANNER IMAGE CHANGE FUNCTIONALITY***********************/
-let bannerImages = [
-    'img/nissan.jpg',
-    'img/nissanStaff.jpg',
-    'img/foton.jpg',
-    'img/bikers.jpg',
-    'img/bikes.jpg',
-    'img/jaguar.jpg',
-    'img/stallone.jpg',
-    'img/stalloneStaff.jpg',
-    'img/group.jpg',
-    'img/exibit.jpg'
-];
-
-let imageTimeCount = 0;
-let changeImage = ()=>{
-    banner.style.backgroundImage = `linear-gradient(rgba(0,0,0, 0.7), rgba(42, 40, 40, 0.664)), url(${bannerImages[imageTimeCount]})`;
-    imageTimeCount++;
-
-    if(imageTimeCount === bannerImages.length){
-        imageTimeCount = 0;
-    }
-}
-setInterval(changeImage, 5000);
-
-
-
-
+                        /************************   NAVIGATION BAR  ***********************/
 // Hamburger icon toggler
 navToggler.addEventListener('click', ()=>{
     
@@ -121,9 +94,31 @@ window.onscroll = function(){
         }
 }
 
+/***************************BANNER IMAGE CHANGE FUNCTIONALITY***********************/
+let bannerImages = [
+    'img/nissan.jpg',
+    'img/nissanStaff.jpg',
+    'img/foton.jpg',
+    'img/bikers.jpg',
+    'img/bikes.jpg',
+    'img/jaguar.jpg',
+    'img/stallone.jpg',
+    'img/stalloneStaff.jpg',
+    'img/group.jpg',
+    'img/exibit.jpg'
+];
 
-                    /**************updating the footer to the current year**************/
-footerYear.textContent = currentYear;
+let imageTimeCount = 0;
+let changeImage = ()=>{
+    banner.style.backgroundImage = `linear-gradient(rgba(0,0,0, 0.7), rgba(42, 40, 40, 0.664)), url(${bannerImages[imageTimeCount]})`;
+    imageTimeCount++;
+
+    if(imageTimeCount === bannerImages.length){
+        imageTimeCount = 0;
+    }
+}
+setInterval(changeImage, 5000);
+
 
                     /**************MODAL CONTENTS**************/
 // Service modal content
@@ -138,13 +133,14 @@ const services = [
         agency services for various car dealerships.
     </p>`,
 
-    `<h2>Auto-Tech Solution</h2>
+    `<h2>Product Promotion</h2>
     <p>
-        Flynt Automobile provides customized automobile 
-        tech solutions for 
-        garages and companies 
-        with fleet and garages.
-    </p>`,
+        Flynt Automobile provides product 
+        promotion services for automobile 
+        dealerships with regards 
+        to spare parts and vehicles
+    </p>
+    `,
 
     `<h2>Consultancy</h2>
     <p>
@@ -153,12 +149,13 @@ const services = [
         other automobile related services.
     </p>`,
 
-    `<h2>Product Promotion</h2>
+    `<h2>Automobile projects</h2>
     <p>
-        Flynt Automobile provides product 
-        promotion services for automobile 
-        dealerships with regards 
-        to spare parts and vehicles
+        Flynt automobile provides automobile 
+        services as third party contractors
+        such as fairs, marketing, product
+        education for organizations, agencies
+        and other corporate entities.
     </p>`
 ]
 
@@ -229,13 +226,13 @@ showMore.forEach(el => {
         if(e.target.classList.contains('vehicle__sales')){
             //console.log("you clicked on vehicle sales")
             modalContent.innerHTML = services[0];
-        } else if(e.target.classList.contains('auto__tech')){
+        } else if(e.target.classList.contains('product__promo')){
             //console.log("you clicked on Auto-tech solutions")
             modalContent.innerHTML = services[1];
         }else if(e.target.classList.contains('auto__consult')){
             //console.log("you clicked on consultancy")
             modalContent.innerHTML = services[2];
-        }else if(e.target.classList.contains('product__promo')){
+        }else if(e.target.classList.contains('auto__project')){
             //console.log("you clicked on product promotion")
             modalContent.innerHTML = services[3];            
         }
@@ -290,6 +287,11 @@ window.addEventListener('keydown', (e)=>{
 });
 
                     /****************COUTNDOWN TO EVENT******************/
+//automatically rendering FAE'23' PER based on current year
+let faeYear = document.querySelector('.fae-year');
+let eventYear = currentYear.toString().slice(2);
+faeYear.textContent = eventYear;
+// console.log(typeof(eventYear))
 
 const countDown = () => {
     const dateCounter = new Date(`December 1, ${currentYear} 00:00:00`).getTime();
@@ -318,7 +320,7 @@ const countDown = () => {
     //let eventTime = document.querySelectorAll('.day,.hour,.minute,.second');
     let countDownContainer = document.querySelector('.countdown');
     
-    let timeValue = [];
+    // let timeValue = [];
     let timeUnit = [];
 
     // eventTime.forEach((time) => {
@@ -358,6 +360,7 @@ const countDown = () => {
 setInterval(countDown, 1000);
 
 
-
+                    /**************updating the footer to the current year**************/
+footerYear.textContent = currentYear;
 
 //node_modules/.bin/babel script.js -o bundle.js
