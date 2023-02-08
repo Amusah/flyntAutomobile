@@ -7,6 +7,8 @@ const closeBtn = document.querySelector('.close');
 const navbar = document.querySelector('.navbar');
 const footerYear = document.querySelector('.footer-year');
 const heroText = document.querySelector('.text_box');
+const links = navList.querySelectorAll('a');
+
 
                         /***************** BANNER IMAGE RENDERING****************/
 const banner = document.querySelector('.main-head')
@@ -39,7 +41,6 @@ let currentYear = new Date().getFullYear();
                         /************************   NAVIGATION BAR  ***********************/
 // Hamburger icon toggler
 navToggler.addEventListener('click', ()=>{
-    
     navList.classList.toggle('active');
     heroText.classList.toggle('fade-banner-text');
     //console.log(navList.classList)
@@ -54,7 +55,6 @@ navToggler.addEventListener('click', ()=>{
         heroText.classList.toggle('fade-banner-text');
     }
     */
-    
     //if(e.currentTarget.classList.contains('burger')){
         hamburger.classList.toggle('hideBurger');
         closeBtn.classList.toggle('ShowCloseBtn');
@@ -74,6 +74,9 @@ navToggler.addEventListener('click', ()=>{
         // });
 
 });
+links.forEach(link => {
+    
+})
 
 // Changing the background color of the navbar on scroll
 window.onscroll = function(){
@@ -96,16 +99,25 @@ window.onscroll = function(){
 
 /***************************BANNER IMAGE CHANGE FUNCTIONALITY***********************/
 let bannerImages = [
+    'img/exibit.jpg',
     'img/nissan.jpg',
     'img/nissanStaff.jpg',
     'img/foton.jpg',
-    'img/bikers.jpg',
-    'img/bikes.jpg',
-    'img/jaguar.jpg',
     'img/stallone.jpg',
     'img/stalloneStaff.jpg',
+    'img/Autoshow1.jpg',
+    'img/Autoshow2.jpg',
+    'img/Autoshow3.jpg',
+    'img/driveTour1.jpg',
+    'img/driveTour3.jpg',
+    'img/driveTour4.jpg',
+    'img/driveTour5.jpg',
+    // 'img/bikers.jpg',
+    'img/bikes.jpg',
+    'img/jaguar.jpg',
     'img/group.jpg',
-    'img/exibit.jpg'
+    'img/movieNight1.jpg',
+    'img/movieNight2.jpg'
 ];
 
 let imageTimeCount = 0;
@@ -117,7 +129,7 @@ let changeImage = ()=>{
         imageTimeCount = 0;
     }
 }
-setInterval(changeImage, 5000);
+setInterval(changeImage, 6000);
 
 
                     /**************MODAL CONTENTS**************/
