@@ -413,22 +413,15 @@
         .fae{
             width: 50%;
             margin: 0 auto;
-
-            // h1{
-            //     //font-size: 2rem;
-            //     padding: 5rem;
-            //     color: red;
-            // }
-            //padding: 0 10rem;
             text-align: center;
             align-items: center;
-            //margin: auto;
 
             .auto-event{
                 width: 100%;
 
                 & a img{
                     box-shadow: .5rem .5rem .5rem rgba($white,0.5);
+                    margin: 1.3rem 0;
                 }
             }
         }

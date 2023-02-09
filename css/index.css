@@ -630,6 +630,7 @@ i {
   }
   .header-overlay .fae .auto-event a img {
     box-shadow: 0.5rem 0.5rem 0.5rem rgba(255, 255, 255, 0.5);
+    margin: 1.3rem 0;
   }
 
   h2 > span {
