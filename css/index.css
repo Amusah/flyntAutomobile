@@ -305,7 +305,12 @@ i {
     margin-bottom: 1rem;
   }
 }
-@media all and (max-width: 833px) {
+@media all and (max-width: 980px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media all and (max-width: 921px) {
   html {
     font-size: 45%;
   }
