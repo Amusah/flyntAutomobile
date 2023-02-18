@@ -24,8 +24,9 @@ const eventModal = document.querySelector('.event-modal');
 const eventModalContent = document.querySelector('.event-modal-content');
 const hideEventModal = document.querySelector('.hide-event-modal');
 
-//Binding that monitors and updates the footer and event countdown year to the current year
-let currentYear = new Date().getFullYear(); 
+//Binding that monitors and updates event year to the current year
+let currentYear = new Date().getFullYear();
+let eventYear = currentYear.toString().slice(2); 
 //console.log(typeof(currentYear))
 
 
@@ -186,14 +187,14 @@ const flyntAutoEvent = [
         lovers to show off, and to socialize 
         among the general public. This year's 
         drive tour is a sub event in the
-        <span>FAE_22</span> series of events and we look forward 
+        <span>FAE_${eventYear}</span> series of events and we look forward 
         to a more wonderful experience than that of last year. Join us 
-        as we cover a distance of 153km on the N1 Stretch.
+        as we cover a distance of 55.2km on the N1 Stretch.
         Follow our social media pages <a href="https://www.facebook.com/100895504973348/posts/pfbid02BfFCYGYTM8uDQej4FutRfnvLRNfYkwzguypb1tCsYQvNvqMCvdcgbWYbbLdBpYNPl/?d=n">@flyntauto</a> and 
         <a href="https://twitter.com/TaadiSAS">@TaadiSAS</a> for more information
     `,
 
-    `   The Ghanaian automobile industry is one of the
+    /*`   The Ghanaian automobile industry is one of the
         fastest growing industries in Africa, yet the
         infrastructure and over vital services have
         not caught up with the demand. As a result,
@@ -204,25 +205,22 @@ const flyntAutoEvent = [
         Follow our social media pages <a href="https://www.facebook.com/100895504973348/posts/pfbid02BfFCYGYTM8uDQej4FutRfnvLRNfYkwzguypb1tCsYQvNvqMCvdcgbWYbbLdBpYNPl/?d=n">@flyntauto</a> and 
         <a href="https://twitter.com/TaadiSAS">@TaadiSAS</a> for more information 
         #FAE22 #FAS #TaadiSAS22
-    `,
+    `,*/
 
     `   Connecting auto brands and consumers have been
         a major goal for the Flynt Auto series of events
         over the years. Flynt Auto Show is an automotive
         fair that showcases various car brands and auto
-        innovations across Ghana to consumers. The fair
-        kicks off in Accra this year and move on
-        to other cities as part of this year's series.
+        innovations across Ghana to consumers.
         Follow our social media pages <a href="https://www.facebook.com/100895504973348/posts/pfbid02BfFCYGYTM8uDQej4FutRfnvLRNfYkwzguypb1tCsYQvNvqMCvdcgbWYbbLdBpYNPl/?d=n">@flyntauto</a> and 
         <a href="https://twitter.com/TaadiSAS">@TaadiSAS</a> for more information
-        of events. #FAE22 #FAS #TaadiSAS22
+        of events. #FAE${eventYear} #FAS #TaadiSAS${eventYear}
     `,
 
     `
         TaadiSAS has been the flagship event of the Flynt Auto
-        Events for the past 3 years. This year, it will be
-        bigger and packed with more activities for a whole
-        week. TaadiSAS 2022 will be a weeklong car festival,
+        Events for the past 3 years.TaadiSAS 20${eventYear} 
+        will be a two day car festival,
         featuring an auto exhibition show, games, photography,
         music and food. The festival will include car-themed
         activities for car enthusiasts, corporate bodies,
@@ -230,7 +228,7 @@ const flyntAutoEvent = [
         Get ready!
         Follow our social media pages <a href="https://www.facebook.com/100895504973348/posts/pfbid02BfFCYGYTM8uDQej4FutRfnvLRNfYkwzguypb1tCsYQvNvqMCvdcgbWYbbLdBpYNPl/?d=n">@flyntauto</a> and 
         <a href="https://twitter.com/TaadiSAS">@TaadiSAS</a> for more information
-        #FAE22 #FAS #TaadiSAS22
+        #FAE${eventYear}  #FAS #TaadiSAS${eventYear} 
     `
 ];
 
@@ -262,21 +260,20 @@ flyntEvent.forEach(fae =>{
         // Rendering Event content dynamically into one single html modal container
         if(e.currentTarget.classList.contains('driveTour')){
             //console.log('you clicked drivetour')
-            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d601940.5639235179!2d-2.5402654910003672!3d5.230455939725654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0xfe77915a7a38941%3A0x5a5d3ee955695cfa!2sTakoradi%20Mall%2C%20Independence%20Avenue%2C%20Takoradi!3m2!1d4.9074556!2d-1.7701376!4m5!1s0xfc2b0a49bbb2e55%3A0xebd3d31c982ab3be!2s7C7C%2B782%20Ankasa%20Game%20Reserve%20%26%20Nini-Suhien%20National%20Park%2C%20Nkwanda!3m2!1d5.2631365!2d-2.5792482!5e1!3m2!1sen!2sgh!4v1662795332938!5m2!1sen!2sgh");
+            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d254431.06540540964!2d-2.0925545903557254!3d4.858011716854547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0xfe77915a7a38941%3A0x5a5d3ee955695cfa!2sTakoradi%20Mall%2C%20Independence%20Avenue%2C%20Takoradi!3m2!1d4.9074556!2d-1.7701376!4m5!1s0xfe794b98d40d623%3A0xc01df4288c104262!2sQVR8%2BFC8%20Fort%20Gross%20Friedricksburg%2C%20Princess%20Town!3m2!1d4.7911671!2d-2.1339174!5e0!3m2!1sen!2sgh!4v1676678513118!5m2!1sen!2sgh");
             eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[0];
-        } else if(e.currentTarget.classList.contains('rideSumit')){
+        }/* else if(e.currentTarget.classList.contains('rideSumit')){
             //console.log('you clicked on ride sumit');
             eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d293.75752196008074!2d-0.17241973593691362!3d5.558306536992567!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf90743d2a860d%3A0x2b87c68c7f2cef91!2sImpact%20Hub%20Accra%20-%201AAP!5e1!3m2!1sen!2sgh!4v1663169748299!5m2!1sen!2sgh");
             eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[1];
-        } else if(e.currentTarget.classList.contains('flyntAutoShow')){
+        } */else if(e.currentTarget.classList.contains('flyntAutoShow')){
             //console.log('you clicked on Flynt auto show');
-            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18797.902895103598!2d-0.2411386!3d5.6384792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x28150c4463c0d554!2sAchimota%20Mall!5e1!3m2!1sen!2sgh!4v1663178028851!5m2!1sen!2sgh");
-            
-            eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[2];
+            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.192304395927!2d-1.77232628529552!3d4.907460941196598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe77915a7a38941%3A0x5a5d3ee955695cfa!2sTakoradi%20Mall!5e0!3m2!1sen!2sgh!4v1676677151731!5m2!1sen!2sgh");
+            eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[1];
         } else if(e.currentTarget.classList.contains('TadiSas')){
             //console.log('you clicked on Tadisas');
-            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18820.051216762466!2d-1.7701376!3d4.9074556!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5a5d3ee955695cfa!2sTakoradi%20Mall!5e1!3m2!1sen!2sgh!4v1663178354940!5m2!1sen!2sgh");
-            eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[3];
+            eventModal.firstElementChild.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63603.06829713229!2d-1.8051572242814184!3d4.907550887964477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfe779d1f0d8bb47%3A0xb68cf596c070f2cf!2sEssipon%20sports%20stadium!5e0!3m2!1sen!2sgh!4v1676677624797!5m2!1sen!2sgh");
+            eventModalContent.firstElementChild.innerHTML = flyntAutoEvent[2];
         }
         eventModalContainer.style.display = 'block';
     });
@@ -305,12 +302,12 @@ window.addEventListener('keydown', (e)=>{
                     /****************COUTNDOWN TO EVENT******************/
 //automatically rendering FAE'23' PER based on current year
 let faeYear = document.querySelector('.fae-year');
-let eventYear = currentYear.toString().slice(2);
+// let eventYear = currentYear.toString().slice(2);
 faeYear.textContent = eventYear;
 // console.log(typeof(eventYear))
 
 const countDown = () => {
-    const dateCounter = new Date(`December 1, ${currentYear} 00:00:00`).getTime();
+    const dateCounter = new Date(`September 22, ${currentYear} 00:00:00`).getTime();
     const now = new Date().getTime();
     const gap = dateCounter - now;
 
